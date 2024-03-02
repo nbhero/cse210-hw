@@ -12,7 +12,6 @@ class Program
 
         if (percentage >= 90)
         {
-            remainder = (percentage / 10)
             letter = "A";
         }
         else if (percentage >= 80)
