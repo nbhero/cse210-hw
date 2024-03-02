@@ -2,6 +2,12 @@
 {
     "version": "0.2.0",
     "configurations": [
+        {
+            "name": "C#: test",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/test.csproj"
+        },
 
         {
             "name": "Sandbox Project",
