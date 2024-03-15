@@ -1,0 +1,17 @@
+Classes:
+Scripture Class
+Reference Class
+Word Class
+
+Word Class: It will have a boolean to either show or hide.
+Reference Class: Getters and Setters. Display Method.
+Scripture Class: List of word objects, the reference and display method and probably a method to hide words.
+
+Which other methods should be called by the Scripture class's HideRandomWords method to help do its work?
+-Hide()
+-Show()
+-IsHidden()
+
+Constructors:
+Reference: String reference.
+Scripture: Constructor that allows to pass in scripture text.
