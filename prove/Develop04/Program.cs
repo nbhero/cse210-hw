@@ -15,6 +15,7 @@ class Program
             Console.WriteLine("2. Reflection");
             Console.WriteLine("3. Listening");
             Console.WriteLine("4. Exit");
+            Console.WriteLine("--------------------");
             string input = Console.ReadLine();
             switch(input){
                 case "1":

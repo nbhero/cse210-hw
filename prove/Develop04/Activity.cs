@@ -22,7 +22,7 @@ public class Activity
         Console.WriteLine($"Welcome to the {_name}");
         Console.WriteLine("");
         Console.WriteLine(_description);
-        Console.WriteLine("How long would you like this activity to last? (Seconds)");
+        Console.WriteLine("How long would you like this activity to last? (In Seconds)");
         _duration = Convert.ToInt32(Console.ReadLine());
         Console.Clear();
         Console.WriteLine("Get ready...");
