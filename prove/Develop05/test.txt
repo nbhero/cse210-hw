@@ -1,0 +1,3 @@
+Score: 0
+SimpleGoal,Language Learning (study japanese)
+SimpleGoal:Language Learning,study japanese,50,False
