@@ -115,6 +115,7 @@ public class UserManager
     {
         if (users.Remove(id))
         {
+            Console.Clear();
             Console.WriteLine($"User with ID {id} removed successfully.");
         }
         else
@@ -127,6 +128,7 @@ public class UserManager
     {
         if (users.Values.Count != 0)
             {
+                Console.Clear();
                 foreach (var user in users.Values)
                 {
                     Console.WriteLine($"User ID: {user._userId}, Name: {user._firstName} {user._lastName}");
