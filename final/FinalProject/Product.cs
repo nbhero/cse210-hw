@@ -14,5 +14,15 @@ namespace FinalProject
             _price = price;
             _quantity = quantity;
         }
+
+        public void ProductReport(int id, string name, decimal price, int quantity)
+        {
+            _id = id;
+            _name = name;
+            _price = price;
+            _quantity = quantity;
+
+            Console.WriteLine($"ID: {id} - Name: {name}, Price: {price} - Quantity: {quantity}");
+        }
     }
 }

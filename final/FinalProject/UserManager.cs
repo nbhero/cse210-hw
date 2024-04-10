@@ -7,8 +7,8 @@ public class UserManager
 
     public void UserService()
     {
-        bool exitProgram = false;
-        while (!exitProgram)
+        bool exitService = false;
+        while (!exitService)
         {
             Console.WriteLine();
 			Console.WriteLine($"Store Manager");
@@ -17,7 +17,7 @@ public class UserManager
 			Console.WriteLine("2. Remove User");
             Console.WriteLine("3. Search User by ID");
             Console.WriteLine("4. List all users");
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("5. Return");
 			
             Console.Write("Select an option: ");
             string input = Console.ReadLine();
@@ -37,7 +37,7 @@ public class UserManager
                     ListAllUsers();
                     break;
                 case "5":
-                    exitProgram = true;
+                    exitService = true;
                     break;
                 default:
                     Console.WriteLine("The chosen option does not exist.");
