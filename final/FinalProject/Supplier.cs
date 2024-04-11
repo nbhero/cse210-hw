@@ -2,38 +2,33 @@ namespace FinalProject
 {
     class Supplier
     {
-        private Dictionary<int, Supplier> _suppliers = new Dictionary<int, Supplier>();
-        private int _id;
-        private string _name;
-        private string _email;
+        public int _id { get; }
+        public string _name { get; }
+        public string _email { get; }
+        private bool _active;
 
-        public Supplier(int id, string name, string email)
+        public Supplier(int id, string name, string email, bool active = true)
         {
             _id = id;
             _name = name;
             _email = email;
+            this._active = active;
         }
 
-        public void AddSupplier(int id, string name, string email)
+        public void SupplierReport()
         {
-            if (!_suppliers.ContainsKey(id))
-            {
-                Console.Clear();
-                _suppliers.Add(id,  new Supplier(id, name, email));
-                Console.WriteLine("Supplier registered successfully!");
-            }
-            else
-            {
-                Console.WriteLine($"Supplier with ID {id} already registered.");
-            }
+            string status = _active ? "Active" : "Inactive";
+            Console.WriteLine($"Supplier ID: {_id} - Name: {_name} | E-mail: {_email} | Status: {status}");
+        }
+        
+        public void SetSupplierInactive(int id)
+        {
+            _active = false;
         }
 
-        public void ListAllSuppliers()
+        public void SetSupplierActive(int id)
         {
-            foreach (var supplier in _suppliers)
-            {
-                Console.WriteLine(supplier.Value._id);
-            }
+            _active = true;
         }
     }
 }

@@ -5,9 +5,9 @@ namespace FinalProject
         public int _userId { get; set; }
         public string _firstName { get; set; }
         public string _lastName { get; set; }
-        private bool _active { get; set; }
         public int _age { get; set; }
-        private bool _admin { get; set; }
+        private bool _active;
+        private bool _admin;
 
         public User(int id, string firstName, string lastName, int age, bool active = true, bool admin = false)
         {
@@ -15,27 +15,24 @@ namespace FinalProject
             _firstName = firstName;
             _lastName = lastName;
             _age = age;
+            this._active = active;
+            this._admin = admin;
         }
 
-        public void UserReport(int id, string firstName, string lastName, int age, bool active = true, bool admin = false)
+        public void UserReport()
         {
-            _userId = id;
-            _firstName = firstName;
-            _lastName = lastName;
-            _age = age;
-            _active = active;
-            _admin = admin;
+            string status = _active ? "Active" : "Inactive";
+            Console.WriteLine($"User ID: {_userId} - Name: {_firstName} {_lastName} | Age: {_age} | Status: {status} | Admin: {_admin}");
+        }
 
-            if (active == true)
-            {
-                string status = "Active";
-                Console.WriteLine($"User ID: {id}\nName: {firstName} {lastName}\nAge: {age}\nStatus: {status}\nAdmin Permission: {admin}");
-            }
-            else
-            {
-                string status = "Inactive";
-                Console.WriteLine($"User ID: {id}\nName: {firstName} {lastName}\nAge: {age}\nStatus: {status}\nAdmin Permission: {admin}");
-            }
+        public void SetUserInactive(int id)
+        {
+            _active = false;
+        }
+
+        public void SetUserActive(int id)
+        {
+            _active = true;
         }
     }
     
