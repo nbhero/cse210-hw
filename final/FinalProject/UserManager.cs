@@ -11,7 +11,7 @@ public class UserManager
         while (!exitService)
         {
             Console.WriteLine();
-			Console.WriteLine($"Store Manager");
+			Console.WriteLine($"Store Manager: User");
 			Console.WriteLine();
             Console.WriteLine("1. Add User");
 			Console.WriteLine("2. Remove User");

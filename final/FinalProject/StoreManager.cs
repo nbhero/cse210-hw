@@ -1,3 +1,5 @@
+using FinalProject;
+
 public class StoreManager
 {
     public void RunSystem()
@@ -5,6 +7,7 @@ public class StoreManager
             bool exitProgram = false;
             while (!exitProgram)
             {
+                Console.Clear();
                 Console.WriteLine();
                 Console.WriteLine($"Store Manager");
                 Console.WriteLine();
@@ -18,14 +21,16 @@ public class StoreManager
                 switch (input)
                 {
                     case "1":
-                        Console.WriteLine("teste");
-                        break;
+                    ProductManager productManager = new ProductManager();
+                    productManager.ProductService();
+                    break;
                     case "2":
                         UserManager user = new UserManager();
                         user.UserService();
                         break;
                     case "3":
-                        Console.WriteLine("teste");
+                        SupplierManager newSupplier = new SupplierManager();
+                        newSupplier.SupplierService();
                         break;
                     case "4":
                         exitProgram = true;

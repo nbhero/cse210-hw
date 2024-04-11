@@ -12,51 +12,65 @@ public class ProductManager
         while (!returtToMenu)
         {
             Console.WriteLine();
-            Console.WriteLine($"Store Manager");
+            Console.WriteLine($"Store Manager: Product");
             Console.WriteLine();
             Console.WriteLine("1. Add Product");
             Console.WriteLine("2. Remove Product");
             Console.WriteLine("3. Search Product");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("4. Edit Product");
+            Console.WriteLine("5. List All Products");
+            Console.WriteLine("6. Return");
             Console.WriteLine("What menu do you want to access? Choose a number!");
             string input = Console.ReadLine();
 
             switch (input)
             {
                 case "1":
-                    
+                    Console.WriteLine("What's the ID?");
+                    string productId = Console.ReadLine();
+                    int productIdToINT = int.Parse(productId);
+                    Console.WriteLine("What's the name?");
+                    string productName = Console.ReadLine();
+                    Console.WriteLine("What's the price?");
+                    string price = Console.ReadLine();
+                    decimal priceToDecimal = decimal.Parse(price);
+                    Console.WriteLine("What's the quantity?");
+                    string quantity = Console.ReadLine();
+                    int quantityToINT = int.Parse(quantity);
+
+                    AddProduct(productIdToINT, productName, priceToDecimal, quantityToINT);
                     break;
                 case "2":
-                    
+                    Console.WriteLine("What's the ID of the Product?");
+                    string removeID = Console.ReadLine();
+                    int removeIDToINT = int.Parse(removeID);
+
+                    RemoveProduct(removeIDToINT);
                     break;
                 case "3":
-                    
+                    Console.WriteLine("What's the ID of the Product?");
+                    string searchID = Console.ReadLine();
+                    int searchIDToInt = int.Parse(searchID);
+
+                    SearchProduct(searchIDToInt);
                     break;
                 case "4":
-                    
+                    Console.WriteLine("What's the ID of the Product?");
+                    string editId = Console.ReadLine();
+                    int editIdToINT = int.Parse(editId);
+                    EditProduct(editIdToINT);
+                    break;
+                case "5":
+                    ListAllProducts();
+                    break;
+                case "6":
+                    returtToMenu = true;
                     break;
                 default:
                     Console.WriteLine("Choose a valid option!");
                     break;
             }
         }
-    }
-
-    public void Add()
-    {
-        Console.WriteLine("What's the ID?");
-        string productId = Console.ReadLine();
-        int productIdToINT = int.Parse(productId);
-        Console.WriteLine("What's the name?");
-        string productName = Console.ReadLine();
-        Console.WriteLine("What's the price?");
-        string price = Console.ReadLine();
-        decimal priceToDecimal = decimal.Parse(price);
-        Console.WriteLine("What's the quantity?");
-        string quantity = Console.ReadLine();
-        int quantityToINT = int.Parse(quantity);
-
-        AddProduct(productIdToINT, productName, priceToDecimal, quantityToINT);
     }
 
     private void AddProduct(int id, string name, decimal price, int quantity)
@@ -135,6 +149,21 @@ public class ProductManager
                     break;
             }
 
+        }
+    }
+
+    public void ListAllProducts()
+    {
+        if (productsList.Values.Count != 0)
+        {
+            foreach (var product in productsList.Values)
+            {
+                Console.WriteLine($"ID: {product._id} - Name: {product._name}, Price: {product._price} - Quantity: {product._quantity}");
+            }
+        }
+        else
+        {
+            Console.WriteLine("There are no supplier to be listed.");
         }
     }
 
